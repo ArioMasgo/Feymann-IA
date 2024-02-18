@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   selector: 'app-home',
   template: `
     <mat-toolbar color="accent">
-      <span>Home</span>
+      <span>Feymann IA</span>
 
       <button mat-flat-button (click)="logOut()">Log out</button>
     </mat-toolbar>
