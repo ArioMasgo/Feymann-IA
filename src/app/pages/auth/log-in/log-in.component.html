@@ -1,44 +1,53 @@
-<div class="form">
-  <div class="form__container">
-    <h1>Log in</h1>
-    <form [formGroup]="form" (ngSubmit)="logIn()">
-      <div>
-        <mat-form-field>
-          <mat-label>Email</mat-label>
-          <input matInput formControlName="email" />
-          <mat-error *ngIf="isEmailValid as messsage">{{ messsage }}</mat-error>
-        </mat-form-field>
-      </div>
-
-      <div>
-        <mat-form-field>
-          <mat-label>Enter your password</mat-label>
+<div class="container">
+  <div
+    class="d-flex flex-column justify-content-center vh-100 align-items-center"
+  >
+    <div class="form-wrap mb-4">
+      <h1 class="mb-4">Log in</h1>
+      <form [formGroup]="form" (ngSubmit)="logIn()" class="">
+        <div class="input-group mb-4">
           <input
-            matInput
-            [type]="hide ? 'password' : 'text'"
-            formControlName="password"
+            formControlName="email"
+            class="form-control custom-placeholder"
+            placeholder="Email"
           />
-          <button
-            mat-icon-button
-            matSuffix
-            (click)="hide = !hide"
-            [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide"
-          >
-            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-          </button>
-          <mat-error>This field is required</mat-error>
-        </mat-form-field>
-      </div>
+        </div>
+        <p *ngIf="isEmailValid as messsage" class="message-error-form">
+          {{ messsage }}
+        </p>
 
-      <div>
-        <button mat-flat-button color="accent" type="submit">Log in</button>
-      </div>
-    </form>
-    <hr />
-    <span class="small-text providers">Have Google or GitHub?</span>
+        <div class="input-group mb-4">
+          <input
+            placeholder="Enter your password"
+            class="form-control custom-placeholder"
+            formControlName="password"
+            [type]="hide ? 'password' : 'text'"
+          />
+          <span class="input-group-text">
+            <button
+              class="btn p-0"
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </span>
+        </div>
+        <p *ngIf="isPasswordValid as messsage" class="message-error-form">
+          {{ messsage }}
+        </p>
+
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary rounded-1">
+            Log in
+          </button>
+        </div>
+      </form>
+    </div>
+    <span class="small-text providers mb-4">Have Google or GitHub?</span>
     <app-button-providers [isLogin]="true" />
-    <span class="small-text log-in-redirect"
+    <span class="small-text log-in-redirect mt-4"
       >Don’t have an account yet?
       <a routerLink="/auth/sign-up">Sign up</a></span
     >

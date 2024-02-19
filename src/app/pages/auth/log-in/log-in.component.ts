@@ -37,6 +37,7 @@ interface LogInForm {
   ],
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
+  styleUrls: ['./log-in.component.scss'],
   providers: [],
 })
 export default class LogInComponent {
@@ -67,11 +68,22 @@ export default class LogInComponent {
     const isInvalid = control?.invalid && control.touched;
 
     if (isInvalid) {
-      return control.hasError('required')
+      return control?.hasError('required')
         ? 'This field is required'
         : 'Enter a valid email';
     }
 
+    return false;
+  }
+
+  get isPasswordValid(): string | boolean {
+    const control = this.form.get('password');
+    const isInvalid = control?.invalid && control.touched;
+    if (isInvalid) {
+      return control?.hasError('required')
+        ? 'This field is required'
+        : 'Enter a valid password';
+    }
     return false;
   }
 
@@ -91,7 +103,15 @@ export default class LogInComponent {
         this.router.navigateByUrl('/');
       });
     } catch (error) {
-      console.error(error);
+      const snackBarRef = this._snackBar.open(
+        'something error is happened 🥲',
+        'Close',
+        {
+          duration: 2500,
+          verticalPosition: 'top',
+          horizontalPosition: 'end',
+        }
+      );
     }
   }
 

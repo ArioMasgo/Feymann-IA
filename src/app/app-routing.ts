@@ -1,16 +1,19 @@
 import { Routes } from '@angular/router';
+import HomeComponent from './pages/home/home.component';
+import SignUpComponent from './pages/auth/sign-up/sign-up.component';
+import LogInComponent from './pages/auth/log-in/log-in.component';
 
 import { authGuard, publicGuard } from './core/guards';
 
 export const routes: Routes = [
   {
     path: '',
-    canActivate: [authGuard],
-    loadComponent: () => import('./pages/home/home.component'),
+    // canActivate: [authGuard],
+    loadComponent: () => import('./pages/landing/landing.component'),
   },
   {
     path: 'auth',
-    canActivate: [publicGuard],
+    // canActivate: [publicGuard],
     children: [
       {
         path: 'sign-up',
@@ -21,5 +24,9 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/auth/log-in/log-in.component'),
       },
     ],
+  },
+  {
+    path: 'home',
+    loadComponent: () => import('./pages/home/home.component'),
   },
 ];

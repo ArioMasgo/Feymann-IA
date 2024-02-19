@@ -1,0 +1,24 @@
+<div>
+  <header class="bg-primary py-4">
+    <div class="container">
+      <div class="d-flex justify-content-between">
+        <div>logo</div>
+
+        <div>
+          <button class="btn" [matMenuTriggerFor]="matMenu">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <!-- Contenido del menú -->
+            <div mat-menu-item>Opción 1</div>
+            <div mat-menu-item>Opción 2</div>
+            <div mat-menu-item>Logout</div>
+          </mat-menu>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container"></div>
+  </main>
+</div>

@@ -1,0 +1,27 @@
+.form-wrap{
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+  }
+  .message-error-form{
+    color: #DB5461;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .custom-placeholder::placeholder {
+    color:#cdd2dc
+  }
+  
+  
+  @media (min-width: 768px) {
+    .form-wrap{
+      width: 600px;
+    }
+  }
+  @media (min-width: 992px) {
+    .form-wrap{
+      width: 400px;
+    }
+  }

@@ -7,7 +7,7 @@
   button {
     background: transparent;
     font-family: inherit;
-    border: 1px solid white;
+    border: 1px solid black;
     width: 100%;
     max-width: 250px;
     color: var(--text);
@@ -19,6 +19,7 @@
     cursor: pointer;
     font-weight: bold;
     transition: all ease-in 0.25s;
+    padding: .5rem 1.5rem;
 
     &:hover {
       background: var(--text);

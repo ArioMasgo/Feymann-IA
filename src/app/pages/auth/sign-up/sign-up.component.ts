@@ -40,6 +40,7 @@ interface SignUpForm {
   ],
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.scss'],
   providers: [],
 })
 export default class SignUpComponent {
@@ -70,6 +71,34 @@ export default class SignUpComponent {
   private _router = inject(Router);
   private _snackBar = inject(MatSnackBar);
 
+  get isNamesValid(): string | boolean {
+    const control = this.form.get('names');
+
+    const isInvalid = control?.invalid && control.touched;
+
+    if (isInvalid) {
+      return control.hasError('required')
+        ? 'This field is required'
+        : 'Enter a valid name';
+    }
+
+    return false;
+  }
+
+  get isLastNameValid(): string | boolean {
+    const control = this.form.get('lastName');
+
+    const isInvalid = control?.invalid && control.touched;
+
+    if (isInvalid) {
+      return control.hasError('required')
+        ? 'This field is required'
+        : 'Enter a valid last name';
+    }
+
+    return false;
+  }
+
   get isEmailValid(): string | boolean {
     const control = this.form.get('email');
 
@@ -84,7 +113,22 @@ export default class SignUpComponent {
     return false;
   }
 
+  get isPasswordValid(): string | boolean {
+    const control = this.form.get('password');
+
+    const isInvalid = control?.invalid && control.touched;
+
+    if (isInvalid) {
+      return control.hasError('required')
+        ? 'This field is required'
+        : 'Enter a valid password';
+    }
+
+    return false;
+  }
+
   async signUp(): Promise<void> {
+    console.log('entro al metodo signUp');
     if (this.form.invalid) return;
 
     const credential: Credential = {
@@ -93,7 +137,7 @@ export default class SignUpComponent {
     };
 
     try {
-      await this.authService.signUpWithEmailAndPassword(credential);
+      let test = await this.authService.signUpWithEmailAndPassword(credential);
 
       const snackBarRef = this.openSnackBar();
 
@@ -101,7 +145,15 @@ export default class SignUpComponent {
         this._router.navigateByUrl('/');
       });
     } catch (error) {
-      console.error(error);
+      const snackBarRef = this._snackBar.open(
+        'something error is happened 🥲',
+        'Close',
+        {
+          duration: 2500,
+          verticalPosition: 'top',
+          horizontalPosition: 'end',
+        }
+      );
     }
   }
 
