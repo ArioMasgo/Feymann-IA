@@ -2,7 +2,17 @@
   <header class="bg-primary py-4">
     <div class="container">
       <div class="d-flex justify-content-between">
-        <div>logo</div>
+        <div class="logo-wrapper">
+          <div class="site-logo">
+            <a class="navbar-brand" href="index.html"
+              ><img
+                class="logo-icon me-2"
+                src="assets/images/site-logo.svg"
+                alt="logo"
+              /><span class="logo-text">Feynman.ia</span></a
+            >
+          </div>
+        </div>
 
         <div>
           <button class="btn" [matMenuTriggerFor]="matMenu">
@@ -12,13 +22,101 @@
             <!-- Contenido del menú -->
             <div mat-menu-item>Opción 1</div>
             <div mat-menu-item>Opción 2</div>
-            <div mat-menu-item>Logout</div>
+            <div mat-menu-item (click)="logOut()">Logout</div>
           </mat-menu>
         </div>
       </div>
     </div>
   </header>
   <main>
-    <div class="container"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="mt-4">Bienvenido Pavel.</h1>
+          <p class="mt-4">Nos da gusto que regreses por aqui 👌</p>
+          <p class="mt-4">Continua donde te quedaste</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-8">
+          <div class="card mt-4">
+            <div
+              class="card-body d-flex gap-4 align-items-center justify-content-between"
+            >
+              <div>
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Magni
+                </p>
+              </div>
+              <div>
+                <a target="_blank" href="https://share.imagica.ai/?q=6b8d823e-4456-4027-95bd-5b318e968840" class="btn btn-primary rounded-0">Go</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-8">
+          <div class="card mt-4">
+            <div
+              class="card-body d-flex gap-4 align-items-center justify-content-between"
+            >
+              <div>
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Magni
+                </p>
+              </div>
+              <div>
+                <a href="#" class="btn btn-primary rounded-0">Go</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-8">
+          <div class="card mt-4">
+            <div
+              class="card-body d-flex gap-4 align-items-center justify-content-between"
+            >
+              <div>
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Magni
+                </p>
+              </div>
+              <div>
+                <a href="#" class="btn btn-primary rounded-0">Go</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-8">
+          <div class="card mt-4">
+            <div
+              class="card-body d-flex gap-4 align-items-center justify-content-between"
+            >
+              <div>
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Magni
+                </p>
+              </div>
+              <div>
+                <a href="#" class="btn btn-primary rounded-0">Go</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 </div>

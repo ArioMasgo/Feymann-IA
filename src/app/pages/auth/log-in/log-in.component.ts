@@ -100,7 +100,7 @@ export default class LogInComponent {
       const snackBarRef = this.openSnackBar();
 
       snackBarRef.afterDismissed().subscribe(() => {
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/admin');
       });
     } catch (error) {
       const snackBarRef = this._snackBar.open(
