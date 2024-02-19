@@ -8,7 +8,6 @@ import { Router, RouterModule } from '@angular/router';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { MatMenuPanel } from '@angular/material/menu';
 
-
 @Component({
   standalone: true,
   imports: [MatIconModule, MatMenuModule],
@@ -32,7 +31,7 @@ export default class HomeComponent {
   async logOut(): Promise<void> {
     try {
       await this.authservice.logOut();
-      this._router.navigateByUrl('/auth/log-in');
+      this._router.navigateByUrl('/');
     } catch (error) {
       console.log(error);
     }

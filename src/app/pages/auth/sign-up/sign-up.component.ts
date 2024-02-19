@@ -142,7 +142,7 @@ export default class SignUpComponent {
       const snackBarRef = this.openSnackBar();
 
       snackBarRef.afterDismissed().subscribe(() => {
-        this._router.navigateByUrl('/');
+        this._router.navigateByUrl('/admin');
       });
     } catch (error) {
       const snackBarRef = this._snackBar.open(

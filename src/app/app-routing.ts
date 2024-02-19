@@ -26,7 +26,7 @@ export const routes: Routes = [
     ],
   },
   {
-    path: 'home',
+    path: 'admin',
     loadComponent: () => import('./pages/home/home.component'),
   },
 ];
