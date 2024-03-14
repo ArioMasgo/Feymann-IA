@@ -4,26 +4,35 @@
       <div class="d-flex justify-content-between">
         <div class="logo-wrapper">
           <div class="site-logo">
-            <a class="navbar-brand" href="index.html"
+            <a class="navbar-brand d-flex align-items-center"
               ><img
                 class="logo-icon me-2"
-                src="assets/images/site-logo.svg"
+                src="assets/images/favicon-32x32.png"
                 alt="logo"
-              /><span class="logo-text">Feynman.ia</span></a
+              /><span class="logo-text">Feynman IA</span></a
             >
           </div>
         </div>
-
-        <div>
+        <style>
+          .btn-light:hover {
+            background-color: #a2a2a2 !important; /* Cambia esto al color que quieras para el hover */
+            transition: background-color 0.3s ease;
+            color: white; /* Agrega una transición suave */
+          }
+        </style>
+        <div class="d-block d-md-none">
           <button class="btn" [matMenuTriggerFor]="matMenu">
             <mat-icon>menu</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-            <!-- Contenido del menú -->
-            <div mat-menu-item>Opción 1</div>
-            <div mat-menu-item>Opción 2</div>
-            <div mat-menu-item (click)="logOut()">Logout</div>
+            <div mat-menu-item (click)="logOut()">Cerrar Sessión</div>
           </mat-menu>
+        </div>
+
+        <div class="d-none d-md-block">
+          <button class="btn btn-light" (click)="logOut()">
+            Cerrar Sessión
+          </button>
         </div>
       </div>
     </div>
@@ -32,86 +41,194 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <h1 class="mt-4">Bienvenido Pavel.</h1>
+          <h1 class="mt-4">Bienvenido</h1>
           <p class="mt-4">Nos da gusto que regreses por aqui 👌</p>
-          <p class="mt-4">Continua donde te quedaste</p>
+          <p class="mt-4"></p>
         </div>
       </div>
-      <div class="row">
-        <div class="col col-8">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
           <div class="card mt-4">
             <div
-              class="card-body d-flex gap-4 align-items-center justify-content-between"
+              class="card-body  d-flex flex-column flex-md-row gap-2 gap-md-4 align-items-start align-items-md-center justify-content-between"
             >
               <div>
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Magni
+                <div class="text-center text-md-left">
+                  <h5 class="card-title">
+                    Metodología de la Investigación 6° edición (Sampieri)
+                  </h5>
+                </div>
+                <p
+                  class="card-text d-none d-md-block"
+                  style="text-align: justify"
+                >
+                  La metodología de investigación es fundamental para cualquier
+                  estudio académico. Este libro de Sampieri es una guía completa
+                  que te ayudará a comprender los principios básicos y avanzados
+                  de la investigación científica. Aprenderás sobre los métodos
+                  de investigación, el diseño del estudio, la recolección y
+                  análisis de datos, y mucho más.
                 </p>
               </div>
-              <div>
-                <a target="_blank" href="https://share.imagica.ai/?q=6b8d823e-4456-4027-95bd-5b318e968840" class="btn btn-primary rounded-0">Go</a>
+              <div
+                class="d-flex justify-content-center text-md-end mt-3 mt-md-0"
+              >
+                <a
+                  target="_blank"
+                  href="https://share.imagica.ai/?q=6b8d823e-4456-4027-95bd-5b318e968840"
+                  class="btn btn-primary rounded-0"
+                  >Iniciar conversación</a
+                >
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col col-8">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
           <div class="card mt-4">
             <div
-              class="card-body d-flex gap-4 align-items-center justify-content-between"
+              class="card-body d-flex flex-column flex-md-row gap-2 gap-md-4 align-items-start align-items-md-center justify-content-between"
             >
               <div>
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Magni
+                <div class="text-center text-md-left">
+                  <h5 class="card-title">
+                    Metodologías de Investigación 2019: Las rutas cuantitativa,
+                    culitativa y mixta
+                  </h5>
+                </div>
+                <p
+                  class="card-text d-none d-md-block"
+                  style="text-align: justify"
+                >
+                  Una guía esencial para comprender las distintas metodologías
+                  de investigación. Este libro de Sampieri te ofrece una visión
+                  completa de las rutas cuantitativa, cualitativa y mixta,
+                  proporcionando una sólida base para tus proyectos de
+                  investigación.
                 </p>
               </div>
-              <div>
-                <a href="#" class="btn btn-primary rounded-0">Go</a>
+              <div
+                class="d-flex justify-content-center text-md-end mt-3 mt-md-0"
+              >
+                <a
+                  target="_blank"
+                  href="https://share.imagica.ai/?q=513a552f-e1cb-4350-b9fa-1f523702ccd1"
+                  class="btn btn-primary rounded-0"
+                  >Iniciar conversación</a
+                >
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col col-8">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
           <div class="card mt-4">
             <div
-              class="card-body d-flex gap-4 align-items-center justify-content-between"
+              class="card-body d-flex flex-column flex-md-row gap-2 gap-md-4 align-items-start align-items-md-center justify-content-between"
             >
               <div>
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Magni
+                <div class="text-center text-md-left">
+                  <h5 class="card-title">Normas APA 7ma Edición</h5>
+                </div>
+                <p
+                  class="card-text d-none d-md-block"
+                  style="text-align: justify"
+                >
+                  Descubre cómo aplicar las Normas APA 7ma Edición de manera
+                  precisa y sencilla con la ayuda de Feynman IA. Este libro es
+                  una guía indispensable para estudiantes, académicos y
+                  profesionales que desean asegurar la correcta citación y
+                  formateo de sus trabajos según los estándares más recientes.
                 </p>
               </div>
-              <div>
-                <a href="#" class="btn btn-primary rounded-0">Go</a>
+              <div
+                class="d-flex justify-content-center text-md-end mt-3 mt-md-0"
+              >
+                <a
+                  target="_blank"
+                  href="https://share.imagica.ai?q=9d425adf-0bc7-4b1a-b1b8-36a3d20ee189"
+                  class="btn btn-primary rounded-0"
+                  >Iniciar conversación</a
+                >
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col col-8">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
           <div class="card mt-4">
             <div
-              class="card-body d-flex gap-4 align-items-center justify-content-between"
+              class="card-body d-flex flex-column flex-md-row gap-2 gap-md-4 align-items-start align-items-md-center justify-content-between"
             >
               <div>
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Magni
+                <div class="text-center text-md-left">
+                  <h5 class="card-title">
+                    Directrices para Revisiones Sistemáticas en Ingeniería del
+                    Software
+                  </h5>
+                </div>
+                <p
+                  class="card-text d-none d-md-block"
+                  style="text-align: justify"
+                >
+                  Descubre las directrices esenciales para realizar revisiones
+                  sistemáticas de la literatura en el campo de la ingeniería del
+                  software. Este recurso es fundamental para investigadores,
+                  estudiantes y profesionales que desean llevar a cabo
+                  revisiones exhaustivas y rigurosas en sus proyectos de
+                  investigación.
                 </p>
               </div>
+              <div
+                class="d-flex justify-content-center text-md-end mt-3 mt-md-0"
+              >
+                <a
+                  target="_blank"
+                  href="https://share.imagica.ai?q=891ee89e-6f14-400a-98b5-a80b32bc6a9a"
+                  class="btn btn-primary rounded-0"
+                  >Iniciar conversación</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
+          <div class="card mt-4">
+            <div
+              class="card-body d-flex flex-column flex-md-row gap-2 gap-md-4 align-items-start align-items-md-center justify-content-between"
+            >
               <div>
-                <a href="#" class="btn btn-primary rounded-0">Go</a>
+                <div class="text-center text-md-left">
+                  <h5 class="card-title">
+                    Cobit 2019 Intoducción y Metodología
+                  </h5>
+                </div>
+                <p
+                  class="card-text d-none d-md-block"
+                  style="text-align: justify"
+                >
+                  Descubre COBIT 2019: Introducción y Metodología con Feynman.
+                  Este recurso esencial te sumerge en los conceptos clave de
+                  COBIT, ofreciéndote una sólida base para comprender su
+                  metodología y aplicarlo de manera efectiva en la gestión de
+                  tecnologías de la información. ¡Explora con Feynman y domina
+                  COBIT 2019!
+                </p>
+              </div>
+              <div
+                class="d-flex justify-content-center text-md-end mt-3 mt-md-0"
+              >
+                <a
+                  target="_blank"
+                  href="https://share.imagica.ai?q=b1b3533a-3fce-4d74-8353-eb00f4d6a679"
+                  class="btn btn-primary rounded-0"
+                  >Iniciar conversación</a
+                >
               </div>
             </div>
           </div>
@@ -120,3 +237,11 @@
     </div>
   </main>
 </div>
+<footer class="footer">
+  <div class="footer-bottom text-center py-5">
+    <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+    <small class="copyright">
+      <p>&copy; 2024 Feynman IA. Todos los derechos reservados.</p>
+    </small>
+  </div>
+</footer>

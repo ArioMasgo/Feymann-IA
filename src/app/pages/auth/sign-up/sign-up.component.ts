@@ -146,7 +146,7 @@ export default class SignUpComponent {
       });
     } catch (error) {
       const snackBarRef = this._snackBar.open(
-        'something error is happened 🥲',
+        'Credenciales Invalidas, Intente nuevamente 🥲 🥲',
         'Close',
         {
           duration: 2500,
