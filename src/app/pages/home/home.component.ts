@@ -7,16 +7,23 @@ import { AuthService } from '../../core/services/auth.service';
 import { Router, RouterModule } from '@angular/router';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { MatMenuPanel } from '@angular/material/menu';
+import { Book, CATEGORIES } from 'src/app/core/utilies/constans';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [MatIconModule, MatMenuModule],
+  imports: [MatIconModule, MatMenuModule, NgFor, NgIf],
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
 export default class HomeComponent {
   private _router = inject(Router);
+  public categories = CATEGORIES;
+  selectedCategory:string = '1';
+  public books:Book[] = [];
+  public isSelectCategory:boolean = false;
+
 
   private authservice = inject(AuthService);
 
@@ -27,7 +34,7 @@ export default class HomeComponent {
     // Lógica para inicializar o manipular el menú aquí
     console.log('matMenu:', this.matMenu);
   }
-
+  
   async logOut(): Promise<void> {
     try {
       await this.authservice.logOut();
@@ -35,5 +42,16 @@ export default class HomeComponent {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  public changeCategory(index:string) {
+    this.selectedCategory = index;
+    this.books = this.categories.find(category => category.id === index)?.books || [];
+    this.isSelectCategory = true;
+  }
+
+  public closeCategoryBooks() {
+    this.isSelectCategory = false;
+    this.books = [];
   }
 }
