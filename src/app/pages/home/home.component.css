@@ -34,7 +34,20 @@
     background-color: #ffffff !important; 
     color: #EDC53A !important;/* Cambia esto por el color que prefieras */
   }
-
+.btn-books{
+  font-size: 13px; 
+  padding: 6px 13px; 
+  border-radius: 4px;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #EDC53A;
+  border: 1px solid #EDC53A;
+}
+.btn-books:hover {
+  background-color: #ffffff;
+  color: #EDC53A;
+  transition: all 0.3s ease 0s;
+}
 
 @media (max-width: 768px) {
     .botones{
