@@ -1,4 +1,4 @@
-import { Component, inject, ViewChild } from '@angular/core';
+import { Component, inject, ViewChild, OnInit} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -17,7 +17,7 @@ import { NgFor, NgIf } from '@angular/common';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export default class HomeComponent {
+export default class HomeComponent implements OnInit{
   private _router = inject(Router);
   public categories = CATEGORIES;
   selectedCategory:string = '1';
@@ -47,6 +47,14 @@ export default class HomeComponent {
   public changeCategory(index:string) {
     this.selectedCategory = index;
     this.books = this.categories.find(category => category.id === index)?.books || [];
+    this.isSelectCategory = true;
+  }
+  ngOnInit() {
+    this.showAllBooks();
+  }
+  public showAllBooks() {
+    this.selectedCategory = 'all';
+    this.books = this.categories.flatMap(category => category.books.slice(0, 2));
     this.isSelectCategory = true;
   }
 

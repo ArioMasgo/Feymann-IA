@@ -18,6 +18,10 @@
     /* color: white; */
     box-shadow: inset 400px 0 0 0 #EDC53A;
   }
+.boton:active {
+    color: white;
+    background-color: #EDC53A;
+  }
 
   .botones{
     display: grid;
@@ -48,6 +52,7 @@
   color: #EDC53A;
   transition: all 0.3s ease 0s;
 }
+
 
 @media (max-width: 768px) {
     .botones{
