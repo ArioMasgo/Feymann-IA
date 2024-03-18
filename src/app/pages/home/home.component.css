@@ -14,6 +14,22 @@
     -moz-transition: ease-out 0.4s;
     transition: ease-out 0.4s;
 }
+
+.my-button {
+  padding: 10px 20px;
+  background-color: rgb(255, 108, 108);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* border: 1px solid black; */
+}
+.my-button:hover {
+  background-color: rgb(228, 63, 63);
+}
+.my-button:active {
+  background-color: #3e8e41;
+}
 .boton:hover {
     /* color: white; */
     box-shadow: inset 400px 0 0 0 #EDC53A;

@@ -6,12 +6,36 @@
           <div class="site-logo">
             <a class="navbar-brand d-flex align-items-center">
               <img
-                class="logo-icon me-2"
+                class="logo-icon me-2 d-none d-md-block"
                 src="assets/images/favicon-32x32.png"
                 alt="logo"
               />
-              <span class="logo-text">Feynman IA</span>
+              <span class="logo-text d-none d-md-block">Feynman IA</span>
             </a>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-4">
+          <div class="d-md-block d-flex">
+            <a
+              href="#"
+              class="my-button"
+              style="
+                text-decoration: none;
+                padding: 12px 15px;
+                background-color: #4caf50;
+              "
+              >Versión Premium</a
+            >
+          </div>
+          <div class="d-none d-md-block hover:color #bbbbb;">
+            <button
+              class="my-button"
+              style="margin-right: 10px"
+              (click)="logOut()"
+            >
+              Cerrar Sesión
+            </button>
           </div>
         </div>
         <div class="d-block d-md-none">
@@ -21,15 +45,6 @@
           <mat-menu #menu="matMenu">
             <div mat-menu-item (click)="logOut()">Cerrar Sessión</div>
           </mat-menu>
-        </div>
-        <div class="d-none d-md-block hover:color #bbbbb;">
-          <button
-            class="btn dark-background text-white px-4"
-            style="margin-right: 10px"
-            (click)="logOut()"
-          >
-            Cerrar Sesión
-          </button>
         </div>
       </div>
     </div>
@@ -46,7 +61,7 @@
       <div class="botones">
         <button class="boton" (click)="changeCategory('1')">
           Investigación
-        </button> 
+        </button>
         <button class="boton" (click)="changeCategory('2')">Psicología</button>
         <button class="boton" (click)="changeCategory('3')">
           Programación
@@ -58,11 +73,8 @@
 
       <div class="container">
         <div *ngIf="isSelectCategory" class="row">
-          <div
-            *ngFor="let book of books"
-            class="col-12 col-sm-6 col-md-4 col-lg-3"
-          >
-            <div class="card mb-4">
+          <div *ngFor="let book of books" class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card mb-4" style="width: auto; min-height: 440px;">
               <img
                 src="{{ book.img_url }}"
                 class="card-img-top"
@@ -75,13 +87,10 @@
               />
               <div class="card-body">
                 <h5 class="card-title fs-6">{{ book.title }}</h5>
-                <p
-                  class="card-text"
-                  style="font-size: 13px; text-align: justify"
-                >
+                <p class="card-text" style="font-size: 13px; text-align: justify">
                   {{ book.description }}
                 </p>
-                <a href="{{ book.url }}" target="_blank" class="btn-books"
+                <a href="{{ book.url }}" target="_blank" class="btn-books" style="position: absolute; bottom: 10px; left: 15px; right: 15px;"
                   >Empezar a chatear</a
                 >
               </div>
